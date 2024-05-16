@@ -1,0 +1,30 @@
+enteries:
+  - srno: 1
+    gender: Female
+    age: 16-18
+    region: North-Central
+    category: My Belief
+    subcategory: Responsibilities
+    game: Learn with Letters
+    language: En
+    date: 18-6-2022
+
+  - srno: 2
+    gender: Female
+    age: 16-18
+    region: North-Central
+    category: My Belief
+    subcategory: Responsibilities
+    game: Learn with Letters
+    language: En
+    date: 18-6-2022
+
+  - srno: 3
+    gender: Female
+    age: 16-18
+    region: Pacific Coast
+    category: My Belief
+    subcategory: Self Esteem
+    game: Learn with Letters
+    language: Sp
+    date: 18-6-2022
