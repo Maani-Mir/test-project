@@ -1,4 +1,7 @@
-import DoughnutChart from "@/components/dough-chart";
+import GenderChart from "@/components/gender-chart";
+import RegionChart from "@/components/region-chart";
+import LanguageChart from "@/components/language-chart";
+import CategoryChart from "@/components/category-chart";
 
 export default function Page() {
   return (
@@ -8,7 +11,16 @@ export default function Page() {
         You can overview Samos Tuanis Data Here!
       </div>
 
-      <DoughnutChart />
+      <GenderChart />
+      <div className="pt-4">
+        <RegionChart />
+      </div>
+      <div className="pt-4">
+        <LanguageChart />
+      </div>
+      <div className="pt-4">
+        <CategoryChart />
+      </div>
     </main>
   );
 }

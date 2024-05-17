@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
-export default function DoughnutChart() {
+export default function LanguageChart() {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function DoughnutChart() {
           ctx.fillStyle = "white";
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
-          ctx.fillText("Gender", xCoor, yCoor);
+          ctx.fillText("Language", xCoor, yCoor);
         },
       };
 
@@ -34,7 +34,7 @@ export default function DoughnutChart() {
         beforeDraw(chart, plugins) {
           console.log(chart.chartArea.width);
 
-          let sliceThicknessPixel = [300, 300];
+          let sliceThicknessPixel = [350, 350];
           sliceThicknessPixel.forEach((thickness, index) => {
             chart.getDatasetMeta(0).data[index].outerRadius =
               (chart.chartArea.width / thickness) * 100;
@@ -46,7 +46,7 @@ export default function DoughnutChart() {
       const newChart = new Chart(context, {
         type: "doughnut",
         data: {
-          labels: ["Male", "Female"],
+          labels: ["English", "Spanish"],
           datasets: [
             {
               label: "Info",
@@ -69,8 +69,19 @@ export default function DoughnutChart() {
         },
 
         options: {
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                usePointStyle: true,
+                pointStyle: "circle",
+                color: "white",
+              },
+            },
+          },
           //responsive: true
         },
+
         plugins: [doughnutLabel, sliceThickness],
       });
 
@@ -84,9 +95,9 @@ export default function DoughnutChart() {
       chartArea: { top, bottom, left, right },
     } = chart;
     const gradientSegment = ctx.createLinearGradient(left, 0, right, 0);
-    gradientSegment.addColorStop(0, "#1F36EC");
-    gradientSegment.addColorStop(0.5, "#0762F0");
-    gradientSegment.addColorStop(1, "#2131EC");
+    gradientSegment.addColorStop(0, "#0762F0");
+    gradientSegment.addColorStop(0.5, "#2131EC");
+    gradientSegment.addColorStop(1, "#0762F0");
     return gradientSegment;
   }
 
@@ -96,9 +107,9 @@ export default function DoughnutChart() {
       chartArea: { top, bottom, left, right },
     } = chart;
     const gradientSegment = ctx.createLinearGradient(left, 0, right, 0);
-    gradientSegment.addColorStop(0, "#B00069");
-    gradientSegment.addColorStop(0.5, "#DF0092");
-    gradientSegment.addColorStop(1, "#AF0068");
+    gradientSegment.addColorStop(0, "#DF0092");
+    gradientSegment.addColorStop(0.5, "#B00069");
+    gradientSegment.addColorStop(1, "#DF0092");
     return gradientSegment;
   }
 
