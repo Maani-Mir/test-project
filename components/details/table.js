@@ -119,7 +119,10 @@ const DetailsTable = () => {
       <table className=" min-w-full text-white md:table">
         <thead className="rounded-lg text-center text-sm font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
           <tr>
-            <th scope="col" className="px-4 py-5 font-medium ">
+            <th
+              scope="col"
+              className="px-4 py-5 font-medium background-color: black border-radius: 20px"
+            >
               #
             </th>
             <th scope="col" className="px-3 py-5 font-medium">

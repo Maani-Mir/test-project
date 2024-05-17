@@ -14,48 +14,107 @@ export default function DoughnutChart() {
       //setting our context to 2d
       const context = chartRef.current.getContext("2d");
 
+      const doughnutLabel = {
+        id: "doughnutLabel",
+        beforeDatasetsDraw(chart, args, pluginOptions) {
+          const { ctx, data } = chart;
+          ctx.save();
+          const xCoor = chart.getDatasetMeta(0).data[0].x;
+          const yCoor = chart.getDatasetMeta(0).data[0].y;
+          ctx.font = "15px sans-serif";
+          ctx.fillStyle = "white";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillText("Gender", xCoor, yCoor);
+        },
+      };
+
+      const sliceThickness = {
+        id: "sliceThickness",
+        beforeDraw(chart, plugins) {
+          console.log(chart.chartArea.width);
+
+          let sliceThicknessPixel = [300, 300];
+          sliceThicknessPixel.forEach((thickness, index) => {
+            chart.getDatasetMeta(0).data[index].outerRadius =
+              (chart.chartArea.width / thickness) * 100;
+          });
+        },
+      };
+
       //new chart instance
       const newChart = new Chart(context, {
         type: "doughnut",
         data: {
-          labels: ["John", "Jane", "Doe"],
+          labels: ["Male", "Female"],
           datasets: [
             {
               label: "Info",
-              data: [34, 64, 23],
-              backgroundColor: [
-                "rgb(255, 99, 132)", // 4th part is reducing the opacity
-                "rgb(255, 159, 64)",
-                "rgb(255, 205, 86)",
-                "rgb(75, 192, 192)",
-                "rgb(54, 162, 235)",
-                "rgb(153, 102, 255)",
-                "rgb(201, 203, 207)",
-              ],
-              borderColor: [
-                "rgb(255, 99, 132)", // 4th part is reducing the opacity
-                "rgb(255, 159, 64)",
-                "rgb(255, 205, 86)",
-                "rgb(75, 192, 192)",
-                "rgb(54, 162, 235)",
-                "rgb(153, 102, 255)",
-                "rgb(201, 203, 207)",
-              ],
-              borderWidth: 1,
+              data: [48, 52],
+              backgroundColor: (context) => {
+                const chart = context.chart;
+                const { ctx, chartArea } = chart;
+                if (!chartArea) {
+                  return null;
+                }
+                if (context.dataIndex === 0) {
+                  return getGradientBlue(chart);
+                } else if (context.dataIndex === 1) {
+                  return getGradientRed(chart);
+                }
+              },
+              borderWidth: 0,
             },
           ],
         },
+
         options: {
           //responsive: true
         },
+        plugins: [doughnutLabel, sliceThickness],
       });
 
       chartRef.current.chart = newChart;
     }
   }, []);
+
+  function getGradientBlue(chart) {
+    const {
+      ctx,
+      chartArea: { top, bottom, left, right },
+    } = chart;
+    const gradientSegment = ctx.createLinearGradient(left, 0, right, 0);
+    gradientSegment.addColorStop(0, "#1F36EC");
+    gradientSegment.addColorStop(0.5, "#0762F0");
+    gradientSegment.addColorStop(1, "#2131EC");
+    return gradientSegment;
+  }
+
+  function getGradientRed(chart) {
+    const {
+      ctx,
+      chartArea: { top, bottom, left, right },
+    } = chart;
+    const gradientSegment = ctx.createLinearGradient(left, 0, right, 0);
+    gradientSegment.addColorStop(0, "#B00069");
+    gradientSegment.addColorStop(0.5, "#DF0092");
+    gradientSegment.addColorStop(1, "#AF0068");
+    return gradientSegment;
+  }
+
   return (
-    <div style={{ position: "relative", width: "50vw", height: "50vh" }}>
-      <canvas ref={chartRef} />
+    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-64 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+      <div
+        style={{
+          position: "relative",
+          width: "20vw",
+          height: "30vh",
+          justifyContent: "center",
+          display: "flex",
+        }}
+      >
+        <canvas ref={chartRef} />
+      </div>
     </div>
   );
 }

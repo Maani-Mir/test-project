@@ -3,8 +3,11 @@ import DoughnutChart from "@/components/dough-chart";
 export default function Page() {
   return (
     <main>
-      <h1 className="md: mb-4 text-2xl text-xl">Dashboard</h1>
-      <DoughnutChart />
+      <div className="pt-12 text-3xl font-semibold ">Dashboard</div>
+      <div className="pt-1 pl-1 text-sm pb-8 text-[#52508C]">
+        You can overview Samos Tuanis Data Here!
+      </div>
+
       <DoughnutChart />
     </main>
   );
