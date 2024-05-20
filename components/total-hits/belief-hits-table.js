@@ -1,6 +1,6 @@
 import React from "react";
 
-const HITS_ENTERIES = [
+const BELIEF_TABLE = [
   {
     srno: "1",
     gender: "Female",
@@ -113,43 +113,29 @@ const HITS_ENTERIES = [
   },
 ];
 
-const HitsTable = () => {
+const BeliefTable = () => {
   return (
     <div className="rounded-full">
-      <table className=" min-w-full text-white md:table">
-        <thead className=" text-center text-sm font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
+      <table className=" min-w-full text-white rounded-lg overflow-hidden">
+        <thead className=" text-center text-sm font-normal bg-gradient-to-t from-[#3A0194] to-[#390693]">
           <tr>
-            <th scope="col" className="px-4 py-5 font-medium ">
-              #
+            <th scope="col" className="px-4 py-4 text-lg ">
+              My Belief
             </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Gender
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Age
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Region
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Category
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Sub Category
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Game
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Language
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Date
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 font-medium"></th>
+            <th scope="col" className="px-3 py-4 text-lg">
+              2000
             </th>
           </tr>
         </thead>
         <tbody>
-          {DETAILS_ENTERIES.map((entry) => (
+          {BELIEF_TABLE.map((entry) => (
             <tr key={entry.srno} className="odd:bg-[#1B1744] even:bg-[#221E52]">
               <td className="text-center text-white whitespace-nowrap px-3 py-3">
                 {entry.srno}
@@ -186,4 +172,4 @@ const HitsTable = () => {
   );
 };
 
-export default DetailsTable;
+export default HitsTable;

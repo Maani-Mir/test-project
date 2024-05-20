@@ -28,7 +28,7 @@ export default function GenderChart() {
           ctx.fillText("Gender", xCoor, yCoor);
         },
       };
-
+      /*
       const sliceThickness = {
         id: "sliceThickness",
         beforeDraw(chart, plugins) {
@@ -41,6 +41,7 @@ export default function GenderChart() {
           });
         },
       };
+      */
 
       //new chart instance
       const newChart = new Chart(context, {
@@ -82,7 +83,7 @@ export default function GenderChart() {
           //responsive: true
         },
 
-        plugins: [doughnutLabel, sliceThickness],
+        plugins: [doughnutLabel],
       });
 
       chartRef.current.chart = newChart;

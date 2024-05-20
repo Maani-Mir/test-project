@@ -113,16 +113,13 @@ const DETAILS_ENTERIES = [
   },
 ];
 
-const DetailsTable = () => {
+export default function DetailsTable() {
   return (
     <div className="">
-      <table className=" min-w-full text-white md:table">
-        <thead className="rounded-lg text-center text-sm font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
+      <table className=" rounded-lg min-w-full text-white overflow-hidden">
+        <thead className=" font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
           <tr>
-            <th
-              scope="col"
-              className="px-4 py-5 font-medium background-color: black border-radius: 20px"
-            >
+            <th scope="col" className="px-4 py-5 font-medium ">
               #
             </th>
             <th scope="col" className="px-3 py-5 font-medium">
@@ -187,6 +184,4 @@ const DetailsTable = () => {
       </table>
     </div>
   );
-};
-
-export default DetailsTable;
+}

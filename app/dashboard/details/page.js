@@ -2,7 +2,7 @@ import DetailsTable from "@/components/details/table";
 
 import React from "react";
 
-const Page = () => {
+export default function Page() {
   return (
     <div>
       <div className="pt-12 text-3xl font-semibold ">App Stats</div>
@@ -12,6 +12,4 @@ const Page = () => {
       <DetailsTable />
     </div>
   );
-};
-
-export default Page;
+}

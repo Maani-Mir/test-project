@@ -28,7 +28,7 @@ export default function LanguageChart() {
           ctx.fillText("Language", xCoor, yCoor);
         },
       };
-
+      /*
       const sliceThickness = {
         id: "sliceThickness",
         beforeDraw(chart, plugins) {
@@ -41,7 +41,7 @@ export default function LanguageChart() {
           });
         },
       };
-
+*/
       //new chart instance
       const newChart = new Chart(context, {
         type: "doughnut",
@@ -82,7 +82,7 @@ export default function LanguageChart() {
           //responsive: true
         },
 
-        plugins: [doughnutLabel, sliceThickness],
+        plugins: [doughnutLabel],
       });
 
       chartRef.current.chart = newChart;

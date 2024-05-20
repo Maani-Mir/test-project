@@ -29,6 +29,7 @@ export default function RegionChart() {
         },
       };
 
+      /*
       const sliceThickness = {
         id: "sliceThickness",
         beforeDraw(chart, plugins) {
@@ -40,7 +41,7 @@ export default function RegionChart() {
               (chart.chartArea.width / thickness) * 100;
           });
         },
-      };
+      };*/
 
       //new chart instance
       const newChart = new Chart(context, {
@@ -88,7 +89,7 @@ export default function RegionChart() {
           //responsive: true
         },
 
-        plugins: [doughnutLabel, sliceThickness],
+        plugins: [doughnutLabel],
       });
 
       chartRef.current.chart = newChart;
@@ -132,7 +133,7 @@ export default function RegionChart() {
   }
 
   return (
-    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-64 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-80 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
       <div
         style={{
           position: "relative",

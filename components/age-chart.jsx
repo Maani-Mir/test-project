@@ -2,7 +2,7 @@
 import { useRef, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
-export default function CategoryChart() {
+export default function AgeChart() {
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function CategoryChart() {
       }
       //setting our context to 2d
       const context = chartRef.current.getContext("2d");
-
+      /*
       const doughnutLabel = {
         id: "doughnutLabel",
         beforeDatasetsDraw(chart, args, pluginOptions) {
@@ -28,7 +28,8 @@ export default function CategoryChart() {
           ctx.fillText("Category", xCoor, yCoor);
         },
       };
-
+*/
+      /*
       const sliceThickness = {
         id: "sliceThickness",
         beforeDraw(chart, plugins) {
@@ -41,17 +42,54 @@ export default function CategoryChart() {
           });
         },
       };
+*/
+      const horizontalBackgroundBar = {
+        id: "horizontalBackgroundBar",
+        beforeDatasetsDraw(chart, args, plugins) {
+          const {
+            data,
+            ctx,
+            chartArea: { top, bottom, left, right, width, height },
+            scales: { x, y },
+          } = chart;
+
+          const barPercentage = data.datasets[0].barPercentage || 0.9;
+          const categoryPercentage = data.datasets[0].categoryPercentage || 0.8;
+
+          const barThickness =
+            (height / data.labels.length) * barPercentage * categoryPercentage;
+
+          ctx.beginPath();
+          ctx.fillStyle = "#160F3B";
+          data.labels.forEach((bar, index) => {
+            ctx.fillRect(
+              left,
+              y.getPixelForValue(index) - barThickness / 2,
+              width,
+              barThickness
+            );
+          });
+
+          //const segment = height / data.labels.length; // width of one bar
+        },
+      };
 
       //new chart instance
       const newChart = new Chart(context, {
         type: "bar",
         data: {
-          labels: ["My Belief", "My Family", "My Country", "My Community"],
+          labels: ["16-18", "19-21", "22-24", "24-29"],
           datasets: [
             {
-              label: "Info",
-              data: [20, 35, 25, 30],
-              backgroundColor: (context) => {
+              label: ["Info"],
+              data: [40, 20, 15, 25],
+              backgroundColor: [
+                "rgb(208,0,134)",
+                "rgb(25,64,238)",
+                "rgb(1,164,203)",
+                "rgb(0,169,77)",
+              ],
+              /*backgroundColor: (context) => {
                 const chart = context.chart;
                 const { ctx, chartArea } = chart;
                 if (!chartArea) {
@@ -66,41 +104,63 @@ export default function CategoryChart() {
                 } else if (context.dataIndex === 3) {
                   return getGradientGreen(chart);
                 }
-              },
+              },*/
               borderWidth: 0,
-              borderRadius: {
-                bottomLeft: 10,
-                bottomRight: 10,
-              },
+              borderRadius: 20,
+              borderSkipped: false,
+              barPercentage: 0.5,
             },
           ],
         },
 
         options: {
+          indexAxis: "y",
+          scales: {
+            x: {
+              grace: 60,
+              ticks: {
+                display: false,
+              },
+              grid: {
+                drawOnChartArea: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                display: false,
+              },
+              grid: {
+                drawOnChartArea: false,
+                drawTicks: false,
+                drawBorder: false,
+              },
+            },
+          },
           plugins: {
             legend: {
-              position: "right",
+              position: "bottom",
               labels: {
                 usePointStyle: true,
                 pointStyle: "circle",
                 color: "white",
+                generateLabels: (chart) => {
+                  console.log(chart);
+                  return chart.data.labels.map((label, index) => ({
+                    text: label,
+
+                    fillStyle: chart.data.datasets[0].backgroundColor[index],
+                  }));
+                },
               },
             },
           },
-          borderSkipped: false,
-          scales: {
-            x: {
-              stacked: true,
-            },
-            y: {
-              beginAtZero: true,
-              stacked: true,
-            },
-          },
-          //responsive: true
+          responsive: true,
         },
 
-        plugins: [doughnutLabel, sliceThickness],
+        plugins: [horizontalBackgroundBar],
       });
 
       chartRef.current.chart = newChart;
@@ -156,7 +216,8 @@ export default function CategoryChart() {
   }
 
   return (
-    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-96 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+    <div className="flex min-h-full flex-col group h-64 w-96 pl-6 pt-4 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+      Age
       <div
         style={{
           position: "relative",
@@ -164,6 +225,7 @@ export default function CategoryChart() {
           height: "30vh",
           justifyContent: "center",
           display: "flex",
+          paddingTop: "9px",
         }}
       >
         <canvas ref={chartRef} />

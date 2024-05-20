@@ -28,7 +28,7 @@ export default function CategoryChart() {
           ctx.fillText("Category", xCoor, yCoor);
         },
       };
-
+      /*
       const sliceThickness = {
         id: "sliceThickness",
         beforeDraw(chart, plugins) {
@@ -41,7 +41,7 @@ export default function CategoryChart() {
           });
         },
       };
-
+*/
       //new chart instance
       const newChart = new Chart(context, {
         type: "doughnut",
@@ -86,7 +86,7 @@ export default function CategoryChart() {
           //responsive: true
         },
 
-        plugins: [doughnutLabel, sliceThickness],
+        plugins: [doughnutLabel],
       });
 
       chartRef.current.chart = newChart;
@@ -142,12 +142,12 @@ export default function CategoryChart() {
   }
 
   return (
-    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-96 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+    <div className="flex min-h-full flex-col items-center group h-64 w-96 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
       <div
         style={{
           position: "relative",
-          width: "20vw",
-          height: "30vh",
+          width: "25vw",
+          height: "40vh",
           justifyContent: "center",
           display: "flex",
         }}
