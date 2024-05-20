@@ -1,4 +1,4 @@
-import HitsTable from "@/components/total-hits/table";
+import BeliefTable from "@/components/total-hits/belief-hits-table";
 
 import React from "react";
 
@@ -11,7 +11,7 @@ export default function Page() {
       <div className="pt-1 pl-1 text-sm pb-8 text-[#52508C]">
         You can overview Samos Tuanis Number of Hits
       </div>
-      <HitsTable />
+      <BeliefTable />
     </div>
   );
 }

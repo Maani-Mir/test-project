@@ -150,7 +150,6 @@ export default function AgeChart() {
                   console.log(chart);
                   return chart.data.labels.map((label, index) => ({
                     text: label,
-
                     fillStyle: chart.data.datasets[0].backgroundColor[index],
                   }));
                 },

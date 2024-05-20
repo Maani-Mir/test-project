@@ -115,73 +115,71 @@ const DETAILS_ENTERIES = [
 
 export default function DetailsTable() {
   return (
-    <div className="">
-      <table className=" rounded-lg min-w-full text-white overflow-hidden">
-        <thead className=" font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
-          <tr>
-            <th scope="col" className="px-4 py-5 font-medium ">
-              #
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Gender
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Age
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Region
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Category
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Sub Category
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Game
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Language
-            </th>
-            <th scope="col" className="px-3 py-5 font-medium">
-              Date
-            </th>
+    <table className=" rounded-lg min-w-full text-white overflow-hidden">
+      <thead className=" font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
+        <tr>
+          <th scope="col" className="px-4 py-5 font-medium ">
+            #
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Gender
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Age
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Region
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Category
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Sub Category
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Game
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Language
+          </th>
+          <th scope="col" className="px-3 py-5 font-medium">
+            Date
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {DETAILS_ENTERIES.map((entry) => (
+          <tr key={entry.srno} className="odd:bg-[#1B1744] even:bg-[#221E52]">
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.srno}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.gender}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.age}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.region}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.category}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.subcategory}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.game}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.language}
+            </td>
+            <td className="text-center text-white whitespace-nowrap px-3 py-3">
+              {entry.date}
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {DETAILS_ENTERIES.map((entry) => (
-            <tr key={entry.srno} className="odd:bg-[#1B1744] even:bg-[#221E52]">
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.srno}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.gender}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.age}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.region}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.category}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.subcategory}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.game}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.language}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.date}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+        ))}
+      </tbody>
+    </table>
   );
 }

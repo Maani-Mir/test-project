@@ -2,174 +2,133 @@ import React from "react";
 
 const BELIEF_TABLE = [
   {
-    srno: "1",
-    gender: "Female",
-    age: "16-18",
-    region: "North-Central",
-    category: "My Belief",
-    subcategory: "Responsibilities",
-    game: "Learn with Letters",
-    language: "En",
-    date: "18-6-2022",
-  },
-  {
-    srno: "2",
-    gender: "Female",
-    age: "16-18",
-    region: "North-Central",
-    category: "My Belief",
-    subcategory: "Responsibilities",
-    game: "Learn with Letters",
-    language: "En",
-    date: "18-6-2022",
-  },
-  {
-    srno: "3",
-    gender: "Female",
-    age: "16-18",
-    region: "Pacific Coast",
-    category: "My Belief",
     subcategory: "Self Esteem",
-    game: "Learn with Letters",
-    language: "Sp",
-    date: "18-6-2022",
+    subvalue: "600",
+    game: {
+      name: "Mythbuster",
+      value: "600",
+      name: "Run and Catch",
+      value: "600",
+      name: "Guess the Word",
+      value: "600",
+    },
   },
   {
-    srno: "4",
-    gender: "Female",
-    age: "16-18",
-    region: "Pacific Coast",
-    category: "My Belief",
-    subcategory: "Self Esteem",
-    game: "Learn with Letters",
-    language: "Sp",
-    date: "18-6-2022",
+    subcategory: "Gender Inclusion",
+    subvalue: "600",
+    game: {
+      name: "Mythbuster",
+      value: "600",
+      name: "Guess the Word",
+      value: "600",
+      name: "Seek and Smash",
+      value: "600",
+    },
   },
   {
-    srno: "5",
-    gender: "Female",
-    age: "16-18",
-    region: "Caribbean Coast",
-    category: "My Family",
-    subcategory: "Internal Relations",
-    game: "Guess the word",
-    language: "En",
-    date: "18-6-2022",
+    subcategory: "Self Regulation",
+    subvalue: "600",
+    game: {
+      name: "Mythbuster",
+      value: "600",
+      name: "Run and Catch",
+      value: "600",
+      name: "Guess the Word",
+      value: "600",
+    },
   },
   {
-    srno: "6",
-    gender: "Female",
-    age: "16-18",
-    region: "Caribbean Coast",
-    category: "My Family",
-    subcategory: "Internal Relations",
-    game: "Guess the word",
-    language: "En",
-    date: "18-6-2022",
-  },
-  {
-    srno: "7",
-    gender: "Male",
-    age: "16-18",
-    region: "Caribbean Coast",
-    category: "My Community",
-    subcategory: "Internal Relations",
-    game: "Guess the word",
-    language: "En",
-    date: "18-6-2022",
-  },
-  {
-    srno: "8",
-    gender: "Male",
-    age: "16-18",
-    region: "Caribbean Coast",
-    category: "My Community",
-    subcategory: "Internal Relations",
-    game: "Guess the word",
-    language: "En",
-    date: "18-6-2022",
-  },
-  {
-    srno: "9",
-    gender: "Male",
-    age: "16-18",
-    region: "Pacific Coast",
-    category: "My Family",
-    subcategory: "Self Esteem",
-    game: "Guess the word",
-    language: "En",
-    date: "18-6-2022",
-  },
-  {
-    srno: "10",
-    gender: "Male",
-    age: "16-18",
-    region: "Pacific Coast",
-    category: "My Family",
-    subcategory: "Self Esteem",
-    game: "Guess the word",
-    language: "En",
-    date: "18-6-2022",
+    subcategory: "Education",
+    subvalue: "600",
+    game: {
+      name: "Mythbuster",
+      value: "600",
+      name: "Guess the Word",
+      value: "600",
+      name: "Seek and Smash",
+      value: "600",
+    },
   },
 ];
 
-const BeliefTable = () => {
+export default function BeliefTable() {
   return (
-    <div className="rounded-full">
-      <table className=" min-w-full text-white rounded-lg overflow-hidden">
-        <thead className=" text-center text-sm font-normal bg-gradient-to-t from-[#3A0194] to-[#390693]">
-          <tr>
-            <th scope="col" className="px-4 py-4 text-lg ">
-              My Belief
-            </th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 font-medium"></th>
-            <th scope="col" className="px-3 py-4 text-lg">
-              2000
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {BELIEF_TABLE.map((entry) => (
-            <tr key={entry.srno} className="odd:bg-[#1B1744] even:bg-[#221E52]">
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.srno}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.gender}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.age}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.region}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.category}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.subcategory}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.game}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.language}
-              </td>
-              <td className="text-center text-white whitespace-nowrap px-3 py-3">
-                {entry.date}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
+    <table className="min-w-full text-white rounded-[20px] overflow-hidden">
+      <thead className="font-normal bg-gradient-to-t from-[#3A0194] to-[#390693]">
+        <tr>
+          <th scope="col" className="text-start px-4 py-4 text-lg ">
+            My Belief
+          </th>
+        </tr>
+      </thead>
+      <tbody className="grid grid-rows-8 grid-flow-col gap-x-8 bg-[#1B0F4E]">
+        <tr className="bg-[#261971]">
+          <td className=" px-4 whitepsace-nowrap py-2">Self Esteem</td>
+          <td className=" px-4 whitepsace-nowrap py-2 text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 whitepsace-nowrap py-2">Mythbuster</td>
+          <td className=" px-4 whitepsace-nowrap py-2 text-right">600</td>
+        </tr>
+        <tr className="bg-[#221E52]">
+          <td className=" px-4 whitepsace-nowrap py-2">Run and Catch</td>
+          <td className=" px-4 whitepsace-nowrap py-2 text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 whitepsace-nowrap py-2">Guess the Word</td>
+          <td className=" px-4 whitepsace-nowrap py-2 text-right">600</td>
+        </tr>
 
-export default HitsTable;
+        <tr className="bg-[#261971]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Self Regulation</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Mythbuster</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#221E52]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Run and Catch</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Guess the Word</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+
+        <tr className="bg-[#261971]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Gender Inclusion</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Mythbuster</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#221E52]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Guess the Word</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Seek and Smash</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#261971]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Education</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Mythbuster</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#221E52]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Guess the Word</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+        <tr className="bg-[#1B1744]">
+          <td className=" px-4 py-2 whitepsace-nowrap">Seek and Smash</td>
+          <td className=" px-4 py-2 whitepsace-nowrap text-right">600</td>
+        </tr>
+      </tbody>
+    </table>
+  );
+}
