@@ -1,6 +1,12 @@
 import React from "react";
-import HitsCard from "./belief-hits-card";
-import HitsTable from "./belief-hits-table";
+import BeliefHitsCard from "./belief-hits-card";
+import BeliefHitsTable from "./belief-hits-table";
+import FamilyHitsCard from "./family-hits-card";
+import FamilyHitsTable from "./family-hits-table";
+import CommunityHitsCard from "./community-hits-card";
+import CommunityHitsTable from "./community-hits-table";
+import CountryHitsCard from "./country-hits-card";
+import CountryHitsTable from "./country-hits-table";
 
 const HITS_TABLE = [
   {
@@ -52,8 +58,20 @@ const HITS_TABLE = [
 export default function TotalHits() {
   return (
     <div>
-      <HitsCard />
-      <HitsTable />
+      <BeliefHitsCard />
+      <BeliefHitsTable />
+      <div className="pt-8">
+        <FamilyHitsCard />
+        <FamilyHitsTable />
+      </div>
+      <div className="pt-8">
+        <CommunityHitsCard />
+        <CommunityHitsTable />
+      </div>
+      <div className="pt-8">
+        <CountryHitsCard />
+        <CountryHitsTable />
+      </div>
     </div>
   );
 }
