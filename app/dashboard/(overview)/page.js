@@ -3,6 +3,10 @@ import RegionChart from "@/components/region-chart";
 import LanguageChart from "@/components/language-chart";
 import CategoryChart from "@/components/category-chart";
 import AgeChart from "@/components/age-chart";
+import GamesCard from "@/components/most-played-games-card";
+import GamesGrid from "@/components/most-played-games-grid";
+import SubCategoriesGrid from "@/components/most-played-subcategories-grid";
+import SubCategoriesCard from "@/components/most-played-subcategories-card";
 
 export default function Page() {
   return (
@@ -21,6 +25,18 @@ export default function Page() {
       <div className="my-2 flex flex-cols-2 gap-8 -mx-3 pt-8">
         <AgeChart />
         <CategoryChart />
+      </div>
+
+      <div className="flex flex-row flex-nowrap gap-8">
+        <div className="pt-4">
+          <GamesCard />
+          <GamesGrid />
+        </div>
+
+        <div className="pt-4">
+          <SubCategoriesCard />
+          <SubCategoriesGrid />
+        </div>
       </div>
 
       {/*</div> */}
