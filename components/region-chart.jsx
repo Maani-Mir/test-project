@@ -145,7 +145,7 @@ export default function RegionChart() {
   }
 
   return (
-    <div className="flex min-h-full flex-col items-center pt-10 group h-80 rounded-xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
+    <div className="flex min-h-full flex-col items-center pt-10 group h-80 rounded-3xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
       <div
         style={{
           position: "relative",

@@ -122,7 +122,7 @@ export default function AgeChart() {
   }, []);
 
   return (
-    <div className="text-xl flex min-h-full flex-col group h-32 pl-6 pt-4 rounded-xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
+    <div className="text-xl flex min-h-full flex-col group h-32 pl-6 pt-4 rounded-3xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
       Age
       <div
         style={{

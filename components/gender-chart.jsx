@@ -113,7 +113,7 @@ export default function GenderChart() {
   }
 
   return (
-    <div className=" flex min-h-full flex-col items-center pt-4 group h-64 rounded-xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
+    <div className=" flex min-h-full flex-col items-center pt-4 group h-64 rounded-3xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
       <div
         style={{
           position: "relative",
