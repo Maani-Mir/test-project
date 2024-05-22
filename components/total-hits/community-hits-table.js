@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CommunityHitsTable() {
   return (
-    <div className="grid grid-cols-2 gap-0 rounded-b-lg overflow-hidden font-semibold text-sm h-[410px] bg-[#1B0F4E] ">
+    <div className="grid grid-cols-2 gap-0 rounded-b-3xl overflow-hidden font-semibold text-sm h-[410px] bg-[#1B0F4E] ">
       <div className="pt-5 px-7">
         <div className="flex flex-row text-nowrap max-w-[550px] bg-[#261971] px-7 py-3">
           Community Relations
