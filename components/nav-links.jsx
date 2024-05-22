@@ -2,8 +2,9 @@
 import {
   ListBulletIcon,
   ChartPieIcon,
-  DocumentDuplicateIcon,
+  CursorArrowRippleIcon,
 } from "@heroicons/react/24/outline";
+import BullseyePointer from "./bullseye-mousepointer-icon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -13,7 +14,7 @@ const links = [
   {
     name: "Total Hits",
     href: "/dashboard/total-hits",
-    icon: DocumentDuplicateIcon,
+    icon: CursorArrowRippleIcon,
   },
   { name: "Details", href: "/dashboard/details", icon: ListBulletIcon },
 ];
