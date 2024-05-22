@@ -49,7 +49,6 @@ export default function CategoryChart() {
           labels: ["My Belief", "My Family", "My Country", "My Community"],
           datasets: [
             {
-              label: "Info",
               data: [20, 35, 25, 30],
               backgroundColor: (context) => {
                 const chart = context.chart;

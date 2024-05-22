@@ -54,7 +54,6 @@ export default function RegionChart() {
           ],
           datasets: [
             {
-              label: "Info",
               data: [35, 30, 35],
               backgroundColor: (context) => {
                 const chart = context.chart;

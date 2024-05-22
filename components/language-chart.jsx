@@ -49,7 +49,6 @@ export default function LanguageChart() {
           labels: ["English", "Spanish"],
           datasets: [
             {
-              label: "Info",
               data: [48, 52],
               backgroundColor: (context) => {
                 const chart = context.chart;

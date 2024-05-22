@@ -50,7 +50,6 @@ export default function GenderChart() {
           labels: ["Male", "Female"],
           datasets: [
             {
-              label: "Info",
               data: [48, 52],
               backgroundColor: (context) => {
                 const chart = context.chart;
