@@ -4,7 +4,7 @@ import {
   ChartPieIcon,
   CursorArrowRippleIcon,
 } from "@heroicons/react/24/outline";
-import BullseyePointer from "./bullseye-mousepointer-icon";
+//import BullseyePointer from "./bullseye-mousepointer-icon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";

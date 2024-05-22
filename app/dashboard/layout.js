@@ -3,7 +3,7 @@ import Sidebar from "@/components/sidebar";
 
 export default function Layout({ children }) {
   return (
-    <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
+    <div className="bg-[#130B2B] flex h-screen flex-col md:flex-row md:overflow-hidden">
       <div className="w-full flex-none md:w-64">
         <Navbar />
         <Sidebar />

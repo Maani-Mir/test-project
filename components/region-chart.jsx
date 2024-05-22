@@ -29,6 +29,17 @@ export default function RegionChart() {
         },
       };
 
+      const legendMargin = {
+        id: "legendMargin",
+        beforeInit(chart, legend, options) {
+          const fitValue = chart.legend.fit;
+          chart.legend.fit = function fit() {
+            fitValue.bind(chart.legend)();
+            return (this.height += 0);
+          };
+        },
+      };
+
       /*
       const sliceThickness = {
         id: "sliceThickness",
@@ -70,6 +81,7 @@ export default function RegionChart() {
                 }
               },
               borderWidth: 0,
+              cutout: "75%",
             },
           ],
         },
@@ -82,13 +94,14 @@ export default function RegionChart() {
                 usePointStyle: true,
                 pointStyle: "circle",
                 color: "white",
+                padding: 13,
               },
             },
           },
           //responsive: true
         },
 
-        plugins: [doughnutLabel],
+        plugins: [doughnutLabel, legendMargin],
       });
 
       chartRef.current.chart = newChart;
@@ -132,7 +145,7 @@ export default function RegionChart() {
   }
 
   return (
-    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-80 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+    <div className="flex min-h-full flex-col items-center pt-10 group h-80 rounded-xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
       <div
         style={{
           position: "relative",

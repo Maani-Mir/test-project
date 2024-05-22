@@ -16,18 +16,20 @@ export default function Page() {
         You can overview Samos Tuanis Data Here!
       </div>
       {/*<div className="grid ">*/}
-      <div className="my-2 flex flex-cols-3 gap-8 -mx-3">
+      <div className="my-2 grid grid-cols-4 gap-8 -mx-3">
         <GenderChart />
-        <RegionChart />
+        <div className="col-span-2">
+          <RegionChart />
+        </div>
         <LanguageChart />
       </div>
 
-      <div className="my-2 flex flex-cols-2 gap-8 -mx-3 pt-8">
+      <div className="my-2 grid grid-cols-2 gap-8 -mx-3 pt-8">
         <AgeChart />
         <CategoryChart />
       </div>
 
-      <div className="flex flex-row flex-nowrap gap-8">
+      <div className="grid grid-cols-2 gap-8">
         <div className="pt-4">
           <GamesCard />
           <GamesGrid />

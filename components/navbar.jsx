@@ -7,7 +7,9 @@ export default function Navbar() {
     //  <nav>User Name</nav>
     //</div>
     <div className="flex flex-col w-screen ">
-      <header class="h-16 bg-[#0D081E] text-white text-right"></header>
+      <nav class="z-10 sticky top-0">
+        <header class="h-16 bg-[#0D081E] text-white text-right"></header>
+      </nav>
     </div>
   );
 }

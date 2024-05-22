@@ -28,7 +28,7 @@ export default function GenderChart() {
           ctx.fillText("Gender", xCoor, yCoor);
         },
       };
-      /*
+
       const sliceThickness = {
         id: "sliceThickness",
         beforeDraw(chart, plugins) {
@@ -41,7 +41,6 @@ export default function GenderChart() {
           });
         },
       };
-      */
 
       //new chart instance
       const newChart = new Chart(context, {
@@ -76,13 +75,15 @@ export default function GenderChart() {
                 usePointStyle: true,
                 pointStyle: "circle",
                 color: "white",
+
+                z: -1,
               },
             },
           },
           //responsive: true
         },
 
-        plugins: [doughnutLabel],
+        plugins: [doughnutLabel, sliceThickness],
       });
 
       chartRef.current.chart = newChart;
@@ -114,7 +115,7 @@ export default function GenderChart() {
   }
 
   return (
-    <div className="flex min-h-full flex-col items-center pt-4 group h-64 w-64 rounded-xl bg-gradient-to-t from-[#110A27] to-[#2D1D6B]">
+    <div className=" flex min-h-full flex-col items-center pt-4 group h-64 rounded-xl bg-gradient-to-t from-[#1B0F4E] to-[#2E1F6D]">
       <div
         style={{
           position: "relative",

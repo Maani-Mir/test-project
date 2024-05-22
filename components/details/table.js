@@ -115,7 +115,7 @@ const DETAILS_ENTERIES = [
 
 export default function DetailsTable() {
   return (
-    <table className=" rounded-lg min-w-full text-white overflow-hidden">
+    <table className=" rounded-t-3xl rounded-b-lg min-w-full text-white overflow-hidden">
       <thead className=" font-normal bg-gradient-to-t from-[#38048C] to-[#3B0092]">
         <tr>
           <th scope="col" className="px-4 py-5 font-medium ">
