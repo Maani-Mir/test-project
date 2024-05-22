@@ -24,18 +24,18 @@ export default function Page() {
         <LanguageChart />
       </div>
 
-      <div className="my-2 grid grid-cols-2 gap-8 -mx-3 pt-8">
+      <div className="my-2 grid grid-cols-2 gap-8 -mx-3 pt-5">
         <AgeChart />
         <CategoryChart />
       </div>
 
-      <div className="grid grid-cols-2 gap-8">
-        <div className="pt-4">
+      <div className="grid grid-cols-2 gap-8 -mx-3">
+        <div className="pt-5">
           <GamesCard />
           <GamesGrid />
         </div>
 
-        <div className="pt-4">
+        <div className="pt-5">
           <SubCategoriesCard />
           <SubCategoriesGrid />
         </div>

@@ -77,7 +77,6 @@ export default function LanguageChart() {
                 color: "white",
               },
             },
-            z: 0,
           },
           //responsive: true
         },

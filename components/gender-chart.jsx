@@ -75,8 +75,6 @@ export default function GenderChart() {
                 usePointStyle: true,
                 pointStyle: "circle",
                 color: "white",
-
-                z: -1,
               },
             },
           },
