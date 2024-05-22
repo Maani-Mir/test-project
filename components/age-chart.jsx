@@ -74,6 +74,20 @@ export default function AgeChart() {
         },
       };
 
+      const legendMargin = {
+        id: "legendMargin",
+        afterInit(chart, args, plugins) {
+          const originalFit = chart.legend.fit;
+          const margin = plugins.margin || 0;
+          chart.legend.fit = function fit() {
+            if (originalFit) {
+              originalFit.call(this);
+            }
+            return (this.height += margin);
+          };
+        },
+      };
+
       //new chart instance
       const newChart = new Chart(context, {
         type: "bar",
@@ -151,15 +165,19 @@ export default function AgeChart() {
                   return chart.data.labels.map((label, index) => ({
                     text: label,
                     fillStyle: chart.data.datasets[0].backgroundColor[index],
+                    fontColor: "white",
                   }));
                 },
               },
+            },
+            legendMargin: {
+              //margin: 1,
             },
           },
           responsive: true,
         },
 
-        plugins: [horizontalBackgroundBar],
+        plugins: [horizontalBackgroundBar, legendMargin],
       });
 
       chartRef.current.chart = newChart;
