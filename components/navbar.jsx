@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -6,9 +7,33 @@ export default function Navbar() {
     //<div className=" w-screen bg-[#0D081E] inset-x-0 top-0 h-16 px-96">
     //  <nav>User Name</nav>
     //</div>
-    <div className="flex flex-col w-screen ">
-      <nav class="z-10 sticky top-0">
-        <header class="h-16 bg-[#0D081E] text-white text-right"></header>
+    <div className="w-screen">
+      <nav class="z-10 sticky ">
+        <header class="pt-5 h-16 bg-[#0D081E] text-right ">
+          <button
+            id="dropdownDefaultButton"
+            data-dropdown-toggle="dropdown"
+            className="text-white pr-10 text-sm inline-flex"
+            type="button"
+          >
+            User Name
+            <svg
+              class="w-2.5 h-2.5 ms-2"
+              aria-hidden="false"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewbox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 5 4 4 4-4"
+              />
+            </svg>
+          </button>
+        </header>
       </nav>
     </div>
   );
