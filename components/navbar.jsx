@@ -22,14 +22,14 @@ export default function Navbar() {
               aria-hidden="false"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewbox="0 0 10 6"
+              viewbox="0.1 0.1 10 4"
             >
               <path
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="m1 5 4 4 4-4"
+                d="m1 4 3 3 3-3"
               />
             </svg>
           </button>
