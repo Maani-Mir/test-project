@@ -7,7 +7,7 @@ export default function Navbar() {
     //<div className=" w-screen bg-[#0D081E] inset-x-0 top-0 h-16 px-96">
     //  <nav>User Name</nav>
     //</div>
-    <div className="w-screen">
+    <div className=" w-screen">
       <nav class="z-10 sticky ">
         <header class="pt-5 h-16 bg-[#0D081E] text-right ">
           <button
@@ -18,18 +18,18 @@ export default function Navbar() {
           >
             User Name
             <svg
-              class="w-2.5 h-2.5 ms-2"
+              class="w-2.5 h-2.5 ms-2 overflow-hidden"
               aria-hidden="false"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewbox="0.1 0.1 10 4"
+              viewbox="0.001 0.001 17 0.000001"
             >
               <path
                 stroke="currentColor"
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="m1 4 3 3 3-3"
+                d="m1 4 4 4 4-4"
               />
             </svg>
           </button>
